@@ -1,5 +1,5 @@
-<!--#include file="/../database/connect.asp"-->
-<!-- #include virtual="./header.asp" -->
+<!--#include file="/../../database/connect.asp"-->
+<!-- #include virtual="/../header.asp" -->
 
 <div class="container-fluid">
   <h1 align=center>Classes of nuce </h1>
@@ -38,7 +38,7 @@
               <button 
                 class="btn btn-primary" 
                 onclick="updateFromInput(<%=rs("cid")%>, '<%=rs("cname")%>', <%=rs("cstatus")%>, <%=rs("corder")%>,  '<%=rs("cimage")%>' )" > Edit </button>
-              <a href="/components/course/deleteCourse.asp?cid=<%=rs("cid")%>" class="btn btn-danger">Delete</a>
+              <a href="/course/deleteCourse.asp?cid=<%=rs("cid")%>" class="btn btn-danger">Delete</a>
               
             </div>
           </div>
@@ -59,7 +59,7 @@
 
       <h1 style="color:blue; text-align:center; font-size:24px">Add new Class</h1>
 
-      <form action="/components/course/addCourse.asp" method=post>
+      <form action="/course/addCourse.asp" method=post>
         <div class="mb-3 row">
           <input type="text"  placeholder="class name" name="txtClassName">
         </div>
@@ -96,7 +96,7 @@
       const html = `
         <h1 style="color:blue; text-align:center; font-size:24px">update Class</h1>
 
-        <form action="/components/course/editCourse.asp" method=post>
+        <form action="/course/editCourse.asp" method=post>
           <div class="mb-3 row">
             <input type="text"  placeholder="class id" name="cid" value=${id}>
           </div>

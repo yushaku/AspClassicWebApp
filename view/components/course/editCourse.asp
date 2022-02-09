@@ -1,4 +1,4 @@
-<!--#include file="/../database/connect.asp"-->
+<!--#include file="/../../database/connect.asp"-->
 <%
 	cid = request.form("cid")
 	cname=request.form("txtClassName")
@@ -10,5 +10,5 @@
 	'response.write sql
 	conn.execute sql
 	conn.close
-	response.redirect("/components/course/course.asp")
+	response.redirect("/course/course.asp")
 %>

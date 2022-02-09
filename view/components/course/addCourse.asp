@@ -1,4 +1,4 @@
-<!--#include file="/../database/connect.asp"-->
+<!--#include file="/../../database/connect.asp"-->
 
 <%
 	cname = request.form("txtClassName")
@@ -6,10 +6,10 @@
 	corder = request.form("txtClassOrder")
 	cstatus = request.form("slClassStatus")
 
-	sql = "insert into class(cname,cimage,corder,cstatus) values ('" & cname &"','" & cimage &"'," & corder &"," & cstatus & ")"
+	sql = "insert into class(cname,cimage,corder,cstatus) values ('" & cname & "', '" & cimage &"', " & corder &"," & cstatus & ")"
 	
 	'response.write sql
 	conn.execute sql
-	response.redirect("/components/course/course.asp")
+	response.redirect("/course/course.asp")
 	conn.close
 %>
