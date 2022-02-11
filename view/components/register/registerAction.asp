@@ -6,10 +6,17 @@
    Email = request.form("txtEmail")
    password = request.form("txtPassword")
 
-	sql = "insert into user(fullName,userName, password, email) values ('" & fullName & "', '" & Username &"', '" & password &"', '" & email & "')"
+	sql = "INSERT INTO user (fullName, userName, password, email) VALUES ('" & fullName & "', '" & Username &"', '" & password &"', '" & email & "');"
 
-   response.write(sql)
-	conn.execute sql
-	response.redirect("/course/course.asp")
-	conn.close
+   Response.Cookies("user")("fullName") = fullName
+   Response.Cookies("user")("Username") = Username
+   Response.Cookies("user")("email") = Email
+
+   session("username")=username
+   'session.Timeout = 0.5
+
+   'response.write(sql)
+	'conn.execute sql
+	response.redirect("/course/course.asp?page=1")
+	'conn.close
 %>
